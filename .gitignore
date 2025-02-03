@@ -7,6 +7,5 @@
 **/target/
 .idea/
 *.iml
-**/resources/META-INF/*
 ./src/site/
 **/src/site

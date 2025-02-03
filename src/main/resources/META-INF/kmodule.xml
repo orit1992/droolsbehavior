@@ -1,0 +1,17 @@
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+
+    <kbase name="rulesCommon" packages="rules.basic.common">
+        <ksession name="rulesSession"/>
+    </kbase>
+
+    <kbase name="rulesStudent"  includes="rulesCommon"
+           packages="rules.basic.students">
+        <ksession name="rulesSessionStudent"/>
+    </kbase>
+
+    <kbase name="rulesWorker"  includes="rulesCommon"
+           packages="rules.basic.workers">
+        <ksession name="rulesSessionWorker"/>
+    </kbase>
+
+</kmodule>
