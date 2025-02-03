@@ -1,0 +1,44 @@
+package rules.basic.workers;
+
+import com.example.Worker;
+import com.example.Person;
+
+
+global java.util.List results;
+
+
+
+
+rule "Set worker name"
+when
+$fact : Worker(
+        $address: address != null
+)
+then
+        System.out.println("Worker Hash " + $fact.hashCode());
+        System.out.println("(address != null) evaluated and address is " + $address );
+        modify($fact) {
+                setName("PIPPO")
+        }
+end
+
+/**
+ * !!!
+ *
+ * when Worker class overrides getAddress() then address == null will be true but it will print a non-null value,
+ * if you want to test uncomment the following rule end comment the previous
+ *
+ * !!!
+ */
+//rule "Set worker name"
+//when
+//$fact : Worker(
+//         $address: address == null
+//)
+//then
+//        System.out.println("Worker Hash " + $fact.hashCode());
+//        System.out.println("(address == null) evaluated but address is " + $address );
+//        modify($fact) {
+//                setName("PIPPO")
+//        }
+//end

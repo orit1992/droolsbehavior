@@ -1,0 +1,21 @@
+package rules.basic.common;
+
+
+import com.example.Person;
+import com.example.Student;
+import com.example.Worker;
+
+global java.util.List results;
+
+rule "Set Address"
+salience 1
+when
+        $fact : Person( address == null)
+then
+        System.out.println("Person Hash " + $fact.hashCode());
+        modify($fact) {
+                setAddress("ROME")
+        }
+end
+
+

@@ -1,0 +1,20 @@
+package rules.basic.students;
+
+import com.example.Student;
+import com.example.Person;
+
+
+global java.util.List results;
+
+
+rule "Set student name"
+when
+$fact : Student(
+         address != null
+)
+then
+        System.out.println("Student Hash " + $fact.hashCode());
+        modify($fact) {
+                setName("PIPPO")
+        }
+end

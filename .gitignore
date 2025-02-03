@@ -1,0 +1,12 @@
+**/.settings
+**/.classpath
+**/.project
+/.metadata
+/bin/
+**/*.2delete
+**/target/
+.idea/
+*.iml
+**/resources/META-INF/*
+./src/site/
+**/src/site

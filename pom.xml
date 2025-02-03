@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>droolsbehavior</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.drools>7.74.1.Final</version.drools>
+        <version.jbpm>7.74.1.Final</version.jbpm>
+        <version.jbpm-kogito>1.44.0.Final</version.jbpm-kogito>
+        <version.kie-plugin>7.74.1.Final</version.kie-plugin>
+        <version.junit>4.12</version.junit>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-bom</artifactId>
+                <type>pom</type>
+                <version>${version.drools}</version>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jbpm</groupId>
+                <artifactId>jbpm-bom</artifactId>
+                <type>pom</type>
+                <version>${version.jbpm}</version>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${version.junit}</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.kie.kogito</groupId>-->
+<!--                <artifactId>jbpm-flow</artifactId>-->
+<!--                <version>${version.jbpm-kogito}</version>-->
+<!--            </dependency>-->
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.kie.kogito</groupId>-->
+<!--            <artifactId>jbpm-flow</artifactId>-->
+<!--            <version>${version.jbpm-kogito}</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-flow</artifactId>
+            <version>${version.jbpm}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>joda-time</groupId>
+                    <artifactId>joda-time</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-decisiontables</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-templates</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.drools</groupId>-->
+<!--            <artifactId>drools-wiring-dynamic</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.drools</groupId>-->
+<!--            <artifactId>drools-xml-support</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-bpmn2</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+        </plugins>
+
+    </build>
+
+
+</project>
